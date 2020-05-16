@@ -5,5 +5,14 @@ import androidx.recyclerview.widget.RecyclerView
 
 abstract class BaseViewHolder<D : ViewHolderData>(view: View) : RecyclerView.ViewHolder(view) {
 
-    abstract fun onBindViewHolder(data: D, lambda: (Pair<Any, Any?>) -> Any?)
+    fun onBindViewHolder(data: D, lambda: (Pair<Any, Any?>) -> Any?) {
+        init()
+        bindViewHolder(data, lambda)
+    }
+
+    abstract fun bindViewHolder(data: D, lambda: (Pair<Any, Any?>) -> Any?)
+
+    abstract fun init()
+
+    fun getString(resId: Int) = itemView.context.getString(resId)
 }
