@@ -10,9 +10,9 @@ abstract class BaseViewHolder<D : ViewHolderData>(view: View) : RecyclerView.Vie
         bindViewHolder(data, lambda)
     }
 
-    abstract fun bindViewHolder(data: D, lambda: (Pair<Any, Any?>) -> Any?)
-
     abstract fun init()
+
+    abstract fun bindViewHolder(data: D, lambda: (Pair<Any, Any?>) -> Any?)
 
     fun getString(resId: Int) = itemView.context.getString(resId)
 }
