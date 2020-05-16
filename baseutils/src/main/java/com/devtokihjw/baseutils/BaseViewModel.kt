@@ -4,7 +4,7 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 
-abstract class BaseViewModel(private val baseApplication: Application) : AndroidViewModel(baseApplication) {
+abstract class BaseViewModel(val baseApplication: Application) : AndroidViewModel(baseApplication) {
 
     val snackBarLiveData = MutableLiveData<String?>()
 
