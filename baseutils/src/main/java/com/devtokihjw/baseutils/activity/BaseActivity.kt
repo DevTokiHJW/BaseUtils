@@ -27,4 +27,6 @@ abstract class BaseActivity(private val layoutResId: Int) : AppCompatActivity() 
     abstract fun observeLiveData()
 
     abstract fun removeObserverLiveData()
+
+    inline fun <reified T : BaseViewModel> getViewModel() = ViewModelProvider(this)[T::class.java]
 }
